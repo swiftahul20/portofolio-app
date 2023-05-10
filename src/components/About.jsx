@@ -6,12 +6,11 @@ const About = () => {
       <div className="flex flex-col justify-center items-center w-full h-full">
         <div className="max-w-[1000px] w-full grid grid-cols-2 gap-8">
           <div className="sm:text-right pb-8 pl-4">
-            <p className="text-4xl font-bold inline border-b-4 border-pink-600">
+            <p className="text-4xl font-bold inline border-b-4 border-[#6B7FD7]">
               About
             </p>
           </div>
-          <div>
-          </div>
+          <div></div>
         </div>
         <div className="max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4">
           <div className="sm:text-right text-4xl font-bold">
@@ -22,10 +21,10 @@ const About = () => {
           </div>
           <div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-              unde dicta cupiditate perspiciatis quis eveniet nihil totam
-              temporibus, porro eius doloremque voluptas. Quo asperiores totam
-              ratione odit enim, fugiat optio.
+              I am a hard-worker, enthusiastic, and eager to learn new things.
+              My skills are in the fields of Front-end Web Developer. Currently
+              using ReactJS and Tailwind as a framework and styling. Looking
+              forward for an opportunity to work together
             </p>
           </div>
         </div>
