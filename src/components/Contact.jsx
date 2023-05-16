@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div
       name="contact"
-      className="w-full h-screen bg-[#0a192f] flex justify-center items-center p-4"
+      className="w-full h-screen bg-[#a3c7ed] flex justify-center items-center p-4"
     >
       <form
         method="POST"
@@ -12,31 +12,31 @@ const Contact = () => {
         className="flex flex-col max-w-[600px] w-full"
       >
         <div className="pb-3">
-          <p className="text-4xl font-bold inline border-b-4 border-[#6B7FD7] text-gray-300">
+          <p className="text-4xl font-bold inline text-[#5C44CE]">
             {" "}
             Contact{" "}
           </p>
-          <p className="text-gray-300 py-4"> Submit form </p>
+          <p className="text-[#202b4b] py-4"> Submit form </p>
         </div>
         <input
-          className="p-2 bg-[#ccd6f6]"
+          className="p-2 bg-[#c8ddf5] rounded-md focus:outline-none focus:ring focus:ring-[#4471ce]"
           type="text"
           placeholder="Name"
           name="name"
         />
         <input
-          className="my-4 p-2 bg-[#ccd6f6]"
+          className="my-4 p-2 bg-[#c8ddf5] rounded-md focus:outline-none focus:ring focus:ring-[#4471ce]"
           type="email"
           placeholder="Email"
           name="email"
         />
         <textarea
-          className="bg-[#ccd6f6] p-2"
+          className="bg-[#c8ddf5] p-2 rounded-md focus:outline-none focus:ring focus:ring-[#4471ce]"
           name="message"
           rows={10}
           placeholder="Message"
         ></textarea>
-        <button className="text-white border-2 hover:bg-[#6B7FD7] hover:border-[#6B7FD7] px-4 py-4 my-8 mx-auto items-center">
+        <button className="text-[#4471ce] border-[#4471ce] border-2 hover:text-white hover:bg-[#4471ce] hover:border-[#4471ce] px-4 py-4 my-8 mx-auto items-center">
           {" "}
           Let's Collaborate{" "}
         </button>

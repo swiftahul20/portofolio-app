@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useScrollPosition } from "../hooks/useScrollPosition";
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail, HiOutlineNewspaper } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
@@ -9,9 +10,17 @@ import Pdf from '../assets/cvats.pdf';
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
+  const scrollPosition = useScrollPosition()
+
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
 
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300">
+    <div className={classNames(
+      scrollPosition > 0 ? 'bg-[#578bda] text-white transition ease-in delay-200' : 'text-black transition ease-out delay-50',
+      'fixed w-full h-[80px] flex justify-between items-center px-4'
+    )}>
       <div>
         <img
           className="rounded-full border-2"
@@ -24,12 +33,12 @@ const Navbar = () => {
       {/* menu  */}
       <ul className="hidden md:flex">
         <li>
-          <Link to="home" smooth={true} duration={500}>
+          <Link activeClass="text-red" spy={true} to="home" smooth={true} duration={500}>
             Home
           </Link>
         </li>
         <li>
-          <Link to="about" smooth={true} duration={500}>
+          <Link to="about" spy={true} smooth={true} duration={500}>
             About
           </Link>
         </li>
@@ -65,31 +74,31 @@ const Navbar = () => {
       >
         <li className="py-6 text-4xl">
           {" "}
-          <Link  onClick={handleClick} to="home" smooth={true} duration={500}>
+          <Link onClick={handleClick} to="home" smooth={true} duration={500}>
             Home
           </Link>{" "}
         </li>
         <li className="py-6 text-4xl">
           {" "}
-          <Link  onClick={handleClick} to="about" smooth={true} duration={500}>
+          <Link onClick={handleClick} to="about" smooth={true} duration={500}>
             About
           </Link>{" "}
         </li>
         <li className="py-6 text-4xl">
           {" "}
-          <Link  onClick={handleClick} to="skills" smooth={true} duration={500}>
+          <Link onClick={handleClick} to="skills" smooth={true} duration={500}>
             Skills
           </Link>{" "}
         </li>
         <li className="py-6 text-4xl">
           {" "}
-          <Link  onClick={handleClick} to="work" smooth={true} duration={500}>
+          <Link onClick={handleClick} to="work" smooth={true} duration={500}>
             Work
           </Link>{" "}
         </li>
         <li className="py-6 text-4xl">
           {" "}
-          <Link  onClick={handleClick} to="contact" smooth={true} duration={500}>
+          <Link onClick={handleClick} to="contact" smooth={true} duration={500}>
             Contact
           </Link>{" "}
         </li>
