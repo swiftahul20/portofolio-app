@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import Switcher from "./Switcher";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail, HiOutlineNewspaper } from "react-icons/hi";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 import Avatar from "../assets/avatar.png";
 import { Link } from "react-scroll";
 import Pdf from '../assets/cvats.pdf';
@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <div className={classNames(
       scrollPosition > 0 ? 'bg-[#578bda] text-white transition ease-in delay-200' : 'text-black transition ease-out delay-50',
-      'fixed w-full h-[80px] flex justify-between items-center px-4'
+      'fixed w-full h-[80px] flex justify-between items-center px-4 dark:bg-slate-800 dark:text-slate-400'
     )}>
       <div>
         <img
@@ -31,31 +31,46 @@ const Navbar = () => {
       </div>
 
       {/* menu  */}
-      <ul className="hidden md:flex">
-        <li>
-          <Link activeClass="text-red" spy={true} to="home" smooth={true} duration={500}>
+      <ul className="hidden md:flex font-bold">
+        <li className={classNames(
+          scrollPosition > 0 ? 'hover:text-[#2e437a]' : 'text-[#2e437a] hover:text-[#4471ce] dark:text-slate-500', 'hover:dark:text-[#4100da]'
+        )}>
+          <Link spy={true} to="home" smooth={true} duration={500}>
             Home
           </Link>
         </li>
-        <li>
+        <li className={classNames(
+          scrollPosition > 0 ? 'hover:text-[#2e437a]' : 'text-[#2e437a] hover:text-[#4471ce] dark:text-slate-500', 'hover:dark:text-[#4100da]'
+        )}>
           <Link to="about" spy={true} smooth={true} duration={500}>
             About
           </Link>
         </li>
-        <li>
+        <li className={classNames(
+          scrollPosition > 0 ? 'hover:text-[#2e437a]' : 'text-[#2e437a] hover:text-[#4471ce] dark:text-slate-500', 'hover:dark:text-[#4100da]'
+        )}>
           <Link to="skills" smooth={true} duration={500}>
             Skills
           </Link>
         </li>
-        <li>
+        <li className={classNames(
+          scrollPosition > 0 ? 'hover:text-[#2e437a]' : 'text-[#2e437a] hover:text-[#4471ce] dark:text-slate-500', 'hover:dark:text-[#4100da]'
+        )}>
           <Link to="work" smooth={true} duration={500}>
             Work
           </Link>
         </li>
-        <li>
+        <li className={classNames(
+          scrollPosition > 0 ? 'hover:text-[#2e437a]' : 'text-[#2e437a] hover:text-[#4471ce] dark:text-slate-500', 'hover:dark:text-[#4100da]'
+        )}>
           <Link to="contact" smooth={true} duration={500}>
             Contact
           </Link>
+        </li>
+        <li className={classNames(
+          scrollPosition > 0 ? 'hover:text-[#2e437a]' : 'text-[#2e437a] hover:text-[#4471ce]', 'hover:dark:text-[#4100da]'
+        )}>
+          <Switcher className={classNames(scrollPosition > 0 ? 'bg-white' : 'bg-black')} />
         </li>
       </ul>
 

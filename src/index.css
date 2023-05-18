@@ -29,3 +29,11 @@
         hsla(212, 69%, 87%, 0.8)   
     )!important;
 }
+
+.content-div:dark:hover {
+    background-image: linear-gradient(
+        to right,
+        rgba(67, 67, 67 1),
+        hsla(0, 0%, 7%, 0.8)   
+    )!important;
+}
